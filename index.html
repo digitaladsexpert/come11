@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -81,8 +82,6 @@
       letter-spacing: 0.3px;
       animation: ctaPulse 2.2s infinite;
       transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
     }
 
     .btn:hover {
@@ -91,7 +90,7 @@
     }
 
     .btn:active {
-      transform: scale(0.98);
+      transform: scale(0.96);
     }
 
     @keyframes ctaPulse {
@@ -103,23 +102,6 @@
       }
       100% {
         box-shadow: 0 0 0 0 rgba(29, 78, 216, 0);
-      }
-    }
-
-    /* RIPPLE EFFECT */
-    .btn span {
-      position: absolute;
-      border-radius: 50%;
-      transform: scale(0);
-      animation: ripple 600ms linear;
-      background: rgba(255, 255, 255, 0.6);
-      pointer-events: none;
-    }
-
-    @keyframes ripple {
-      to {
-        transform: scale(4);
-        opacity: 0;
       }
     }
 
@@ -147,27 +129,45 @@
       font-size: 11px;
       color: #9ca3af;
     }
+
+    /* Advertise Box */
+    .ad-box {
+      display: block;
+      background: #f1f5ff;
+      color: #1d4ed8;
+      text-decoration: none;
+      font-size: 12px;
+      padding: 10px;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .ad-box:hover {
+      background: #dbeafe;
+      transform: translateY(-2px);
+    }
   </style>
 
   <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '25764040933216541');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=25764040933216541&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '25764040933216541');
+    fbq('track', 'PageView');
+  </script>
 
-  
+  <noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=25764040933216541&ev=PageView&noscript=1"/>
+  </noscript>
+
 </head>
 <body>
 
@@ -175,7 +175,6 @@ src="https://www.facebook.com/tr?id=25764040933216541&ev=PageView&noscript=1"
 
     <!-- LOGO -->
     <div class="logo">
-      <!-- Replace logo.png -->
       <img src="come11.jpg" alt="Logo">
     </div>
 
@@ -189,8 +188,10 @@ src="https://www.facebook.com/tr?id=25764040933216541&ev=PageView&noscript=1"
     </p>
 
     <!-- CTA -->
-    <a href="https://telegram.me/+HGaBUXxGXd5mOGVl" class="btn">
-      Limited Free Access - Join Now
+    <a href="https://telegram.me/+HGaBUXxGXd5mOGVl" 
+       class="btn"
+       onclick="fbq('track', 'Lead');">
+       Join Free Telegram Now
     </a>
 
     <!-- FEATURES -->
@@ -203,29 +204,19 @@ src="https://www.facebook.com/tr?id=25764040933216541&ev=PageView&noscript=1"
 
     <!-- FOOTER -->
     <div class="footer">
-      © 2025 COME11 FANTASY TEAM 2026 | All Rights Reserved
+
+      <a href="https://t.me/+UyYzth29HpY4MDVl" target="_blank" class="ad-box">
+        This channel is Advertised By <b>Digital Ads Expert</b>
+      </a>
+
+      <p style="margin-top:10px;">
+        © 2025 COME11 FANTASY TEAM 2026 | All Rights Reserved
+      </p>
+
     </div>
 
   </div>
 
-  <!-- RIPPLE SCRIPT -->
-  <script>
-    document.querySelectorAll('.btn').forEach(button => {
-      button.addEventListener('click', function (e) {
-        const span = document.createElement('span');
-        const size = Math.max(this.clientWidth, this.clientHeight);
-        const rect = this.getBoundingClientRect();
-
-        span.style.width = span.style.height = size + 'px';
-        span.style.left = e.clientX - rect.left - size / 2 + 'px';
-        span.style.top = e.clientY - rect.top - size / 2 + 'px';
-
-        this.appendChild(span);
-
-        setTimeout(() => span.remove(), 600);
-      });
-    });
-  </script>
-
 </body>
 </html>
+```
