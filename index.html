@@ -1,222 +1,231 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>COME11 TEAM 2026</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COME11 MEGA GL</title>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #031d12;
+    color: #fff;
+}
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
+/* GRID BACKGROUND */
+body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(#00ff8844 1px, transparent 1px),
+                      linear-gradient(90deg, #00ff8844 1px, transparent 1px);
+    background-size: 35px 35px;
+    z-index: -1;
+}
 
-    body {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #eaf6ff, #e9fff3);
-    }
+/* CONTAINER */
+.container {
+    max-width: 500px;
+    margin: auto;
+    padding: 15px;
+    text-align: center;
+}
 
-    .card {
-      background: #ffffff;
-      width: 360px;
-      max-width: 92%;
-      border-radius: 18px;
-      padding: 28px 24px 30px;
-      text-align: center;
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
-    }
+/* LOGO */
+.logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+}
 
-    .logo {
-      width: 90px;
-      height: 90px;
-      border-radius: 50%;
-      background: #000;
-      margin: 0 auto 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 3px solid #2563eb;
-    }
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 0 20px #00ff88;
+}
 
-    .logo img {
-      width: 70px;
-      height: 70px;
-      object-fit: contain;
-      border-radius: 50%;
-    }
+/* HEADINGS */
+h1 {
+    font-size: 28px;
+    margin: 10px 0;
+}
 
-    h1 {
-      font-size: 22px;
-      font-weight: 700;
-      color: #1c2b4a;
-      margin-bottom: 6px;
-    }
+.highlight {
+    color: #00ff88;
+}
 
-    .subtitle {
-      font-size: 14px;
-      color: #6b7280;
-      line-height: 1.5;
-      margin-bottom: 20px;
-    }
+.subtext {
+    color: #ccc;
+    font-size: 15px;
+    line-height: 1.5;
+}
 
-    /* CTA BUTTON */
-    .btn {
-      display: block;
-      width: 100%;
-      background: linear-gradient(135deg, #2563eb, #1d4ed8);
-      color: #fff;
-      text-decoration: none;
-      padding: 14px 0;
-      border-radius: 10px;
-      font-weight: 600;
-      font-size: 15px;
-      letter-spacing: 0.3px;
-      animation: ctaPulse 2.2s infinite;
-      transition: all 0.3s ease;
-    }
+/* URGENCY */
+.urgency {
+    color: #ff4d4d;
+    font-weight: bold;
+    margin: 12px 0;
+    font-size: 14px;
+}
 
-    .btn:hover {
-      background: linear-gradient(135deg, #1e40af, #1d4ed8);
-      transform: translateY(-2px);
-    }
+/* BOX */
+.box {
+    background: rgba(0, 255, 136, 0.1);
+    border: 1px solid #00ff88;
+    padding: 12px;
+    border-radius: 10px;
+    margin: 15px 0;
+    font-size: 14px;
+}
 
-    .btn:active {
-      transform: scale(0.96);
-    }
+/* STATS */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
 
-    @keyframes ctaPulse {
-      0% {
-        box-shadow: 0 0 0 0 rgba(29, 78, 216, 0.6);
-      }
-      50% {
-        box-shadow: 0 0 18px 6px rgba(29, 78, 216, 0.25);
-      }
-      100% {
-        box-shadow: 0 0 0 0 rgba(29, 78, 216, 0);
-      }
-    }
+.stat {
+    background: rgba(0,255,136,0.1);
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 14px;
+}
 
-    .features {
-      text-align: left;
-      margin-top: 22px;
-    }
+/* FEATURES */
+.features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
 
-    .feature {
-      display: flex;
-      align-items: center;
-      font-size: 14px;
-      color: #374151;
-      margin-bottom: 12px;
-    }
+.feature {
+    background: rgba(0,255,136,0.1);
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+}
 
-    .check {
-      color: #16a34a;
-      font-size: 16px;
-      margin-right: 10px;
-    }
+/* CTA BUTTON */
+.cta {
+    margin-top: 25px;
+}
 
-    .footer {
-      margin-top: 18px;
-      font-size: 11px;
-      color: #9ca3af;
-    }
+.cta button {
+    width: 100%;
+    background: #b6ff00;
+    color: #000;
+    border: none;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 40px;
+    cursor: pointer;
+    box-shadow: 0 0 15px #b6ff00;
+    transition: 0.3s;
+}
 
-    /* Advertise Box */
-    .ad-box {
-      display: block;
-      background: #f1f5ff;
-      color: #1d4ed8;
-      text-decoration: none;
-      font-size: 12px;
-      padding: 10px;
-      border-radius: 8px;
-      font-weight: 500;
-      transition: 0.3s;
-    }
+.cta button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px #b6ff00;
+}
 
-    .ad-box:hover {
-      background: #dbeafe;
-      transform: translateY(-2px);
-    }
-  </style>
+/* FOOTER */
+.footer {
+    margin-top: 30px;
+    font-size: 14px;
+}
 
-  <!-- Meta Pixel Code -->
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '25764040933216541');
-    fbq('track', 'PageView');
-  </script>
+.footer a {
+    color: #00ff88;
+    text-decoration: none;
+    font-weight: bold;
+}
 
-  <noscript>
-    <img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=25764040933216541&ev=PageView&noscript=1"/>
-  </noscript>
+.footer a:hover {
+    text-decoration: underline;
+}
 
+/* MOBILE EXTRA OPTIMIZATION */
+@media(max-width: 400px){
+    h1 { font-size: 24px; }
+    .subtext { font-size: 14px; }
+}
+</style>
 </head>
+
 <body>
 
-  <div class="card">
+<div class="container">
 
-    <!-- LOGO -->
+    <!-- LOGO IMAGE -->
     <div class="logo">
-      <img src="come11.jpg" alt="Logo">
+        <img src="come11.jpg" alt="COME11 Logo">
     </div>
 
-    <!-- TITLE -->
-    <h1>COME11 FANTASY TEAM 2026</h1>
+    <!-- HEADING -->
+    <h1>COME11 <span class="highlight">MEGA GL</span></h1>
 
-    <!-- SUBTITLE -->
-    <p class="subtitle">
-      Smart match perspective & clean insights —
-      simplified for serious cricket followers.
+    <p class="subtext">
+        7+ Years Experience • Best Fantasy Tips 🎯<br>
+        Win Big Every Match 💰
     </p>
 
-    <!-- CTA -->
-    <a href="https://telegram.me/+HGaBUXxGXd5mOGVl" 
-       class="btn"
-       onclick="fbq('track', 'Lead');">
-       Join Free Telegram Now
-    </a>
+    <!-- URGENCY -->
+    <p class="urgency">⚠️ Only 100 Spots Left – Join Fast!</p>
+
+    <!-- SOCIAL PROOF -->
+    <div class="box">
+        🎉 <b>115 Crore+ Winners 🔥</b><br>
+        Proven track record • Join now for best GL teams
+    </div>
+
+    <!-- STATS -->
+    <div class="stats">
+        <div class="stat">14K+<br>Members</div>
+        <div class="stat">115 Cr+<br>Winners</div>
+        <div class="stat">7 Years<br>Experience</div>
+        <div class="stat">FREE<br>To Join</div>
+    </div>
 
     <!-- FEATURES -->
     <div class="features">
-      <div class="feature"><span class="check">✔</span> Daily Match Insights</div>
-      <div class="feature"><span class="check">✔</span> Strong Pre-match Logic</div>
-      <div class="feature"><span class="check">✔</span> High-accuracy Reads</div>
-      <div class="feature"><span class="check">✔</span> Free Access Limited Time</div>
+        <div class="feature">⚡ Mega GL Teams</div>
+        <div class="feature">📊 Match Predictions</div>
+        <div class="feature">💡 Fantasy Tips</div>
+        <div class="feature">📢 Daily Updates</div>
+    </div>
+
+    <!-- PAIN + SOLUTION -->
+    <div class="box">
+        🚨 Most users lose without strategy...<br>
+        🔥 We provide Smart GL Teams + Winning Strategy
+    </div>
+
+    <!-- CTA -->
+    <div class="cta">
+        <button onclick="window.location.href='https://t.me/+yz0cOi-MXhA5NDVl'">
+            JOIN FREE BEFORE NEXT MATCH 🚀
+        </button>
     </div>
 
     <!-- FOOTER -->
     <div class="footer">
-
-      <a href="https://t.me/+UyYzth29HpY4MDVl" target="_blank" class="ad-box">
-        This channel is Advertised By <b>Digital Ads Expert</b>
-      </a>
-
-      <p style="margin-top:10px;">
-        © 2025 COME11 FANTASY TEAM 2026 | All Rights Reserved
-      </p>
-
+        Ads by 
+        <a href="https://t.me/+JP96Y2n0U8xiZWI1" target="_blank">
+            Digital Ads Expert
+        </a>
     </div>
 
-  </div>
+</div>
 
 </body>
 </html>
-
