@@ -3,164 +3,149 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>COME11 MEGA GL</title>
+<title>Cricket Updates & Insights</title>
 
 <style>
-body {
+* {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: #031d12;
-    color: #fff;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* GRID BACKGROUND */
-body::before {
-    content: "";
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(#00ff8844 1px, transparent 1px),
-                      linear-gradient(90deg, #00ff8844 1px, transparent 1px);
-    background-size: 35px 35px;
-    z-index: -1;
+body {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #e9ecef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
-/* CONTAINER */
+/* SINGLE CARD */
 .container {
-    max-width: 500px;
-    margin: auto;
-    padding: 15px;
+    width: 92%;
+    max-width: 380px;
+    background: linear-gradient(180deg, #3a6f5f, #2c5e50);
+    border-radius: 25px;
+    padding: 20px 16px;
+    text-align: center;
+    color: white;
+    box-shadow: 
+        0 10px 30px rgba(0,0,0,0.25),
+        0 0 25px rgba(0,255,150,0.25);
+}
+
+/* Tag */
+.tag {
+    background: #4CAF50;
+    padding: 7px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    display: inline-block;
+    margin-bottom: 12px;
+    box-shadow: 0 0 10px rgba(76,175,80,0.6);
+}
+
+/* Profile */
+.profile {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    background: url('profile.jpg') center/cover no-repeat;
+    margin: 10px auto;
+    border: 2px solid rgba(255,255,255,0.3);
+}
+
+/* Title */
+h1 {
+    font-size: 20px;
+    margin: 8px 0;
+}
+
+/* Subtitle */
+.subtitle {
+    font-size: 12.5px;
+    opacity: 0.9;
+    line-height: 1.4;
+}
+
+/* Timer */
+.timer {
+    margin: 12px 0;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* BUTTON GLOW 🔥 */
+.btn {
+    background: #00e676;
+    padding: 14px;
+    border-radius: 30px;
+    display: block;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+    margin: 12px 0;
+    box-shadow: 
+        0 6px 15px rgba(0,0,0,0.2),
+        0 0 15px rgba(0,230,118,0.8),
+        0 0 30px rgba(0,230,118,0.5);
+    transition: 0.3s;
+    animation: glowPulse 2s infinite;
+}
+
+/* Hover */
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 
+        0 8px 20px rgba(0,0,0,0.3),
+        0 0 25px rgba(0,230,118,1),
+        0 0 45px rgba(0,230,118,0.8);
+}
+
+/* Glow animation */
+@keyframes glowPulse {
+    0% { box-shadow: 0 0 10px rgba(0,230,118,0.6); }
+    50% { box-shadow: 0 0 25px rgba(0,230,118,1); }
+    100% { box-shadow: 0 0 10px rgba(0,230,118,0.6); }
+}
+
+/* Footer */
+.footer-text {
+    font-size: 12px;
+    opacity: 0.85;
+}
+
+/* Divider */
+hr {
+    border: 0;
+    border-top: 1px dashed rgba(255,255,255,0.3);
+    margin: 14px 0;
+}
+
+/* Links */
+.links {
+    margin-top: 8px;
     text-align: center;
 }
-
-/* LOGO */
-.logo {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 20px auto;
-}
-
-.logo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-    box-shadow: 0 0 20px #00ff88;
-}
-
-/* HEADINGS */
-h1 {
-    font-size: 28px;
-    margin: 10px 0;
-}
-
-.highlight {
-    color: #00ff88;
-}
-
-.subtext {
-    color: #ccc;
-    font-size: 15px;
-    line-height: 1.5;
-}
-
-/* URGENCY */
-.urgency {
-    color: #ff4d4d;
-    font-weight: bold;
-    margin: 12px 0;
-    font-size: 14px;
-}
-
-/* BOX */
-.box {
-    background: rgba(0, 255, 136, 0.1);
-    border: 1px solid #00ff88;
-    padding: 12px;
-    border-radius: 10px;
-    margin: 15px 0;
-    font-size: 14px;
-}
-
-/* STATS */
-.stats {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
-}
-
-.stat {
-    background: rgba(0,255,136,0.1);
-    padding: 12px;
-    border-radius: 8px;
-    font-size: 14px;
-}
-
-/* FEATURES */
-.features {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-}
-
-.feature {
-    background: rgba(0,255,136,0.1);
-    padding: 10px;
-    border-radius: 8px;
-    font-size: 14px;
-}
-
-/* CTA BUTTON */
-.cta {
-    margin-top: 25px;
-}
-
-.cta button {
-    width: 100%;
-    background: #b6ff00;
-    color: #000;
-    border: none;
-    padding: 16px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 40px;
-    cursor: pointer;
-    box-shadow: 0 0 15px #b6ff00;
-    transition: 0.3s;
-}
-
-.cta button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 30px #b6ff00;
-}
-
-/* FOOTER */
-.footer {
-    margin-top: 30px;
-    font-size: 14px;
-}
-
-.footer a {
-    color: #00ff88;
+.links a {
+    color: #90caf9;
+    font-size: 11px;
     text-decoration: none;
-    font-weight: bold;
+    margin: 0 5px;
 }
 
-.footer a:hover {
-    text-decoration: underline;
+/* Managed */
+.managed {
+    margin-top: 10px;
+    font-size: 11px;
 }
-
-/* MOBILE EXTRA OPTIMIZATION */
-@media(max-width: 400px){
-    h1 { font-size: 24px; }
-    .subtext { font-size: 14px; }
+.managed a {
+    color: #ffd54f;
+    text-decoration: none;
 }
 </style>
-
 
     <!-- Meta Pixel Code -->
 <script>
@@ -180,7 +165,6 @@ src="https://www.facebook.com/tr?id=25764040933216541&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
 
-
     
 </head>
 
@@ -188,66 +172,51 @@ src="https://www.facebook.com/tr?id=25764040933216541&ev=PageView&noscript=1"
 
 <div class="container">
 
-    <!-- LOGO IMAGE -->
-    <div class="logo">
-        <img src="come11.jpg" alt="COME11 Logo">
+    <div class="tag">🏏 cricket Updates & Insights</div>
+
+    <div class="profile"></div>
+
+    <h1>COME11 FANTASY TEAM 2026</h1>
+
+    <div class="subtitle">
+        Honest analysis • Match insights • Community driven
     </div>
 
-    <!-- HEADING -->
-    <h1>COME11 <span class="highlight">MEGA GL</span></h1>
-
-    <p class="subtext">
-        7+ Years Experience • Best Fantasy Tips 🎯<br>
-        Win Big Every Match 💰
-    </p>
-
-    <!-- URGENCY -->
-    <p class="urgency">⚠️ Only 100 Spots Left – Join Fast!</p>
-
-    <!-- SOCIAL PROOF -->
-    <div class="box">
-        🎉 <b>115 Crore+ Winners 🔥</b><br>
-        Proven track record • Join now for best GL teams
+    <div class="timer">
+        FREE JOINING ENDS IN <span id="count">30</span>s
     </div>
 
-    <!-- STATS -->
-    <div class="stats">
-        <div class="stat">14K+<br>Members</div>
-        <div class="stat">115 Cr+<br>Winners</div>
-        <div class="stat">7 Years<br>Experience</div>
-        <div class="stat">FREE<br>To Join</div>
+    <!-- BUTTON LINK CHANGE HERE -->
+    <a href="https://t.me/+yz0cOi-MXhA5NDVl" class="btn">Subscribe Free ✈️</a>
+
+    <div class="footer-text">
+        Stay informed with transparent cricket analysis
     </div>
 
-    <!-- FEATURES -->
-    <div class="features">
-        <div class="feature">⚡ Mega GL Teams</div>
-        <div class="feature">📊 Match Predictions</div>
-        <div class="feature">💡 Fantasy Tips</div>
-        <div class="feature">📢 Daily Updates</div>
+    <hr>
+
+    <div class="links">
+        <a href="https://t.me/+yz0cOi-MXhA5NDVl">Terms</a> |
+        <a href="https://t.me/+yz0cOi-MXhA5NDVl">Privacy Policy</a> |
+        <a href="https://t.me/+yz0cOi-MXhA5NDVl">Disclaimer</a>
     </div>
 
-    <!-- PAIN + SOLUTION -->
-    <div class="box">
-        🚨 Most users lose without strategy...<br>
-        🔥 We provide Smart GL Teams + Winning Strategy
-    </div>
-
-    <!-- CTA -->
-    <div class="cta">
-        <button onclick="window.location.href='https://t.me/+yz0cOi-MXhA5NDVl'">
-            JOIN FREE BEFORE NEXT MATCH 🚀
-        </button>
-    </div>
-
-    <!-- FOOTER -->
-    <div class="footer">
-        Ads by 
-        <a href="https://t.me/+JP96Y2n0U8xiZWI1" target="_blank">
-            Digital Ads Expert
-        </a>
+    <div class="managed">
+        Managed by 
+        <a href="https://t.me/+ifc6dyg-xiA2ZGE1" target="_blank">Digital Ads Expert</a>
     </div>
 
 </div>
+
+<script>
+let time = 30;
+setInterval(() => {
+    if (time > 0) {
+        time--;
+        document.getElementById("count").innerText = time;
+    }
+}, 1000);
+</script>
 
 </body>
 </html>
